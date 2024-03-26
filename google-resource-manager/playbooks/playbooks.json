@@ -1,0 +1,601 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "9c517aca-f7ce-4c1e-93c0-e26baf25df1f",
+      "@type": "WorkflowCollection",
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "372ea7e0-f45f-4e19-ba65-56e7cc7325be",
+          "collection": "/api/3/workflow_collections/9c517aca-f7ce-4c1e-93c0-e26baf25df1f",
+          "steps": [
+            {
+              "uuid": "d00073ff-30b7-4473-960c-b79fd3e8494e",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "44b06e82-ebac-4901-b06c-ec42a5c72e92",
+              "@type": "WorkflowStep",
+              "name": "Search Organizations",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Resource Manager",
+                "config": "",
+                "params": {
+                  "query": "",
+                  "pageSize": "",
+                  "pageToken": ""
+                },
+                "version": "1.0.0",
+                "connector": "google-resource-manager",
+                "operation": "search_organizations",
+                "operationTitle": "Search Organizations"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Searches organization resources that are visible to the user and satisfy the specified filter parameters you have specified.",
+          "name": "Search Organizations",
+          "tag": "#Google Resource Manager",
+          "recordTags": [
+            "Google",
+            "google-resource-manager"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/d00073ff-30b7-4473-960c-b79fd3e8494e",
+          "routes": [
+            {
+              "uuid": "94895d4f-4bbd-4baf-aa64-92e7ba771284",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Search Organizations",
+              "sourceStep": "/api/3/workflow_steps/d00073ff-30b7-4473-960c-b79fd3e8494e",
+              "targetStep": "/api/3/workflow_steps/44b06e82-ebac-4901-b06c-ec42a5c72e92"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "94035fd1-5d80-4fcd-b2fd-6705bfb27f12",
+          "collection": "/api/3/workflow_collections/9c517aca-f7ce-4c1e-93c0-e26baf25df1f",
+          "steps": [
+            {
+              "uuid": "9bedd757-d475-4b37-866e-d3a062ef1358",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "51392294-052f-4b56-9247-969a5fc73acc",
+              "@type": "WorkflowStep",
+              "name": "Get organization Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Resource Manager",
+                "config": "",
+                "params": {
+                  "organization_name": ""
+                },
+                "version": "1.0.0",
+                "connector": "google-resource-manager",
+                "operation": "get_organization_details",
+                "operationTitle": "Get organization Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves an organization details based on the project name you have specified.",
+          "name": "Get organization Details",
+          "tag": "#Google Resource Manager",
+          "recordTags": [
+            "Google",
+            "google-resource-manager"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/9bedd757-d475-4b37-866e-d3a062ef1358",
+          "routes": [
+            {
+              "uuid": "02163fd1-bcad-4008-ad81-5ac7c560f0a5",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get organization Details",
+              "sourceStep": "/api/3/workflow_steps/9bedd757-d475-4b37-866e-d3a062ef1358",
+              "targetStep": "/api/3/workflow_steps/51392294-052f-4b56-9247-969a5fc73acc"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "f0dc24af-ef74-4e80-83fe-edc72146ee9c",
+          "collection": "/api/3/workflow_collections/9c517aca-f7ce-4c1e-93c0-e26baf25df1f",
+          "steps": [
+            {
+              "uuid": "2bad43e9-edc5-43be-88b3-28f4fcefc2dc",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "4c27c88c-18d0-464a-9d6e-2b3669088a28",
+              "@type": "WorkflowStep",
+              "name": "Create Project",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Resource Manager",
+                "config": "",
+                "params": {
+                  "projectId": "",
+                  "displayName": "",
+                  "labels": {
+                    "label_key": "label_value",
+                    "label_key1": "label_value1"
+                  },
+                  "tags": {
+                    "tag_key": "tag_value",
+                    "tag_key1": "tag_value1"
+                  }
+                },
+                "version": "1.0.0",
+                "connector": "google-resource-manager",
+                "operation": "create_project",
+                "operationTitle": "Create Project"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Creates a project in Google Resource Manager based on the project ID and other input parameters you have specified.",
+          "name": "Create Project",
+          "tag": "#Google Resource Manager",
+          "recordTags": [
+            "Google",
+            "google-resource-manager"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2bad43e9-edc5-43be-88b3-28f4fcefc2dc",
+          "routes": [
+            {
+              "uuid": "af9af19e-e91e-4d93-9342-709049bf018c",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Project",
+              "sourceStep": "/api/3/workflow_steps/2bad43e9-edc5-43be-88b3-28f4fcefc2dc",
+              "targetStep": "/api/3/workflow_steps/4c27c88c-18d0-464a-9d6e-2b3669088a28"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "59f9707d-04bd-430e-a953-6e83ef3e4cde",
+          "collection": "/api/3/workflow_collections/9c517aca-f7ce-4c1e-93c0-e26baf25df1f",
+          "steps": [
+            {
+              "uuid": "c2ee30f9-5fe4-4c3e-8882-9e4c530714ce",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "a5676953-3648-42c9-a76c-203161010440",
+              "@type": "WorkflowStep",
+              "name": "Search Projects",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Resource Manager",
+                "config": "",
+                "params": {
+                  "query": "",
+                  "pageSize": "",
+                  "pageToken": ""
+                },
+                "version": "1.0.0",
+                "connector": "google-resource-manager",
+                "operation": "search_projects",
+                "operationTitle": "Search Projects"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Searches for a projects based on the input parameters you have specified.",
+          "name": "Search Projects",
+          "tag": "#Google Resource Manager",
+          "recordTags": [
+            "Google",
+            "google-resource-manager"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/c2ee30f9-5fe4-4c3e-8882-9e4c530714ce",
+          "routes": [
+            {
+              "uuid": "5edc9b75-44a0-40c9-b7ce-564705fbfb57",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Search Projects",
+              "sourceStep": "/api/3/workflow_steps/c2ee30f9-5fe4-4c3e-8882-9e4c530714ce",
+              "targetStep": "/api/3/workflow_steps/a5676953-3648-42c9-a76c-203161010440"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "8cbe82f5-d58d-42d8-a1be-c7a301787c8c",
+          "collection": "/api/3/workflow_collections/9c517aca-f7ce-4c1e-93c0-e26baf25df1f",
+          "steps": [
+            {
+              "uuid": "5b061bc9-2aa1-41d9-ae9b-be4554d3fbd7",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "bff62a1b-e7f3-4638-b390-1003881fea00",
+              "@type": "WorkflowStep",
+              "name": "Get Project Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Resource Manager",
+                "config": "",
+                "params": {
+                  "project_name": ""
+                },
+                "version": "1.0.0",
+                "connector": "google-resource-manager",
+                "operation": "get_project_details",
+                "operationTitle": "Get Project Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves an project details based on the project name you have specified.",
+          "name": "Get Project Details",
+          "tag": "#Google Resource Manager",
+          "recordTags": [
+            "Google",
+            "google-resource-manager"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/5b061bc9-2aa1-41d9-ae9b-be4554d3fbd7",
+          "routes": [
+            {
+              "uuid": "c9cf7aed-0afd-4383-a114-3875bd70408b",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Project Details",
+              "sourceStep": "/api/3/workflow_steps/5b061bc9-2aa1-41d9-ae9b-be4554d3fbd7",
+              "targetStep": "/api/3/workflow_steps/bff62a1b-e7f3-4638-b390-1003881fea00"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "06b23a8a-3ce1-4ca2-9cc2-f11b3add2a01",
+          "collection": "/api/3/workflow_collections/9c517aca-f7ce-4c1e-93c0-e26baf25df1f",
+          "steps": [
+            {
+              "uuid": "bb21b8ba-85c8-41a3-b4fa-241e477cc386",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "36a170b2-bedd-498b-b64d-617f113551f7",
+              "@type": "WorkflowStep",
+              "name": "Update Project",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Resource Manager",
+                "config": "",
+                "params": {
+                  "project_name": "",
+                  "displayName": "",
+                  "labels": {
+                    "label_key": "label_value",
+                    "label_key1": "label_value1"
+                  },
+                  "tags": {
+                    "tag_key": "tag_value",
+                    "tag_key1": "tag_value1"
+                  },
+                  "additional_parameters": ""
+                },
+                "version": "1.0.0",
+                "connector": "google-resource-manager",
+                "operation": "update_project",
+                "operationTitle": "Update Project"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Updates an specific project details in Google Resource Manager based on the project name and other input parameters that you have specified.",
+          "name": "Update Project",
+          "tag": "#Google Resource Manager",
+          "recordTags": [
+            "Google",
+            "google-resource-manager"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/bb21b8ba-85c8-41a3-b4fa-241e477cc386",
+          "routes": [
+            {
+              "uuid": "e7d2eb2f-51d6-4f18-b27b-c902fbd46481",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Project",
+              "sourceStep": "/api/3/workflow_steps/bb21b8ba-85c8-41a3-b4fa-241e477cc386",
+              "targetStep": "/api/3/workflow_steps/36a170b2-bedd-498b-b64d-617f113551f7"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "6f9db9eb-fa38-43de-9d46-4fe5cd106be4",
+          "collection": "/api/3/workflow_collections/9c517aca-f7ce-4c1e-93c0-e26baf25df1f",
+          "steps": [
+            {
+              "uuid": "b9151cb6-246c-4bf8-afe4-856a7264c37a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "1bef100f-eebc-414f-80ec-cbffdaa8d4ce",
+              "@type": "WorkflowStep",
+              "name": "Delete Project",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Resource Manager",
+                "config": "",
+                "params": {
+                  "project_name": ""
+                },
+                "version": "1.0.0",
+                "connector": "google-resource-manager",
+                "operation": "delete_project",
+                "operationTitle": "Delete Project"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Deletes an specific project details based on the project name you have specified.",
+          "name": "Delete Project",
+          "tag": "#Google Resource Manager",
+          "recordTags": [
+            "Google",
+            "google-resource-manager"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b9151cb6-246c-4bf8-afe4-856a7264c37a",
+          "routes": [
+            {
+              "uuid": "3be3f5ef-fc82-40c8-96ec-2e7360b45280",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Project",
+              "sourceStep": "/api/3/workflow_steps/b9151cb6-246c-4bf8-afe4-856a7264c37a",
+              "targetStep": "/api/3/workflow_steps/1bef100f-eebc-414f-80ec-cbffdaa8d4ce"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "2de11bcf-cbca-41e3-a30f-4d01ef01a547",
+          "collection": "/api/3/workflow_collections/9c517aca-f7ce-4c1e-93c0-e26baf25df1f",
+          "steps": [
+            {
+              "uuid": "7de2fd8a-3ba8-4d50-ba0e-f81717a77a50",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "5996d5da-2d1e-4965-afee-faa0485d199f",
+              "@type": "WorkflowStep",
+              "name": "Restore Project",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Resource Manager",
+                "config": "",
+                "params": {
+                  "project_name": ""
+                },
+                "version": "1.0.0",
+                "connector": "google-resource-manager",
+                "operation": "restore_project",
+                "operationTitle": "Restore Project"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Restore a specific project details based on the project name you have specified.",
+          "name": "Restore Project",
+          "tag": "#Google Resource Manager",
+          "recordTags": [
+            "Google",
+            "google-resource-manager"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/7de2fd8a-3ba8-4d50-ba0e-f81717a77a50",
+          "routes": [
+            {
+              "uuid": "2a5a8d81-bcc5-4ba8-9831-df4441c02974",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Restore Project",
+              "sourceStep": "/api/3/workflow_steps/7de2fd8a-3ba8-4d50-ba0e-f81717a77a50",
+              "targetStep": "/api/3/workflow_steps/5996d5da-2d1e-4965-afee-faa0485d199f"
+            }
+          ]
+        }
+      ],
+      "name": "Sample - Google Resource Manager - 1.0.0",
+      "description": "Google Cloud Resource Manager is a service provided by Google Cloud Platform (GCP) that helps you manage your GCP resources across projects. It provides a unified interface for organizing, viewing, and controlling access to your cloud resources.",
+      "visible": true,
+      "recordTags": [
+        "Google",
+        "google-resource-manager"
+      ]
+    }
+  ]
+}
