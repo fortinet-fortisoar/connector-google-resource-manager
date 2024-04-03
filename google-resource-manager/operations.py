@@ -50,12 +50,12 @@ def api_request(method, endpoint, connector_info, config, params=None, data=None
 
 
 def check_payload(payload):
-    l = {}
+    result = {}
     for k, v in payload.items():
         if isinstance(v, dict):
             x = check_payload(v)
             if len(x.keys()) > 0:
-                l[k] = x
+                result[k] = x
         elif isinstance(v, list):
             p = []
             for c in v:
@@ -66,10 +66,10 @@ def check_payload(payload):
                 elif c is not None and c != '':
                     p.append(c)
             if p != []:
-                l[k] = p
+                result[k] = p
         elif v is not None and v != '':
-            l[k] = v
-    return l
+            result[k] = v
+    return result
 
 
 def build_payload(payload):

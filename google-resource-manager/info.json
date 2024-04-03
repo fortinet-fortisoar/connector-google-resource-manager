@@ -108,14 +108,14 @@
           "tooltip": "Specify the maximum count of records that you want this operation to fetch from Google Resource Manager."
         },
         {
-          "title": "PageToken",
-          "description": "Specify a PageToken if a previous operation returned a partial result. If the previous response contains a nextPageToken element, the value of the nextPageToken element includes a PageToken parameter that specifies a starting point to use for subsequent calls.",
+          "title": "Page Token",
+          "description": "Specify a Page Token if a previous operation returned a partial result. If the previous response contains a nextPageToken element, the value of the nextPageToken element includes a Page Token parameter that specifies a starting point to use for subsequent calls.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "pageToken",
-          "tooltip": "Specify a PageToken if a previous operation returned a partial result. If the previous response contains a nextPageToken element, the value of the nextPageToken element includes a PageToken parameter that specifies a starting point to use for subsequent calls."
+          "tooltip": "Specify a Page Token if a previous operation returned a partial result. If the previous response contains a nextPageToken element, the value of the nextPageToken element includes a Page Token parameter that specifies a starting point to use for subsequent calls."
         }
       ],
       "output_schema": {
@@ -196,7 +196,7 @@
         {
           "title": "Labels",
           "name": "labels",
-          "description": "Specify the labels for the project based on which you want to create project in Google Resource Manager.",
+          "description": "Specify the labels for the project based on which you want to create project in Google Resource Manager. For example, {\"label_key\": \"label_value\", \"label_key1\": \"label_value1\"}",
           "type": "json",
           "visible": true,
           "editable": true,
@@ -210,7 +210,7 @@
         {
           "title": "Tags",
           "name": "tags",
-          "description": "Specify the tags for the project based on which you want to create project in Google Resource Manager.",
+          "description": "Specify the tags for the project based on which you want to create project in Google Resource Manager. For example, {\"tag_key\": \"tag_value\" , \"tag_key1\": \"tag_value1\"}",
           "type": "json",
           "visible": true,
           "editable": true,
@@ -228,8 +228,8 @@
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "Additional fields, in the JSON format, based on which you want to create project in Google Resource Manager.",
-          "description": "Additional fields, in the JSON format, based on which you want to create project in Google Resource Manager."
+          "tooltip": "Additional fields, in the JSON format, based on which you want to create project in Google Resource Manager. For reference, https://cloud.google.com/resource-manager/reference/rest/v3/projects#Project",
+          "description": "Additional fields, in the JSON format, based on which you want to create project in Google Resource Manager. For reference, https://cloud.google.com/resource-manager/reference/rest/v3/projects#Project"
         }
       ],
       "output_schema": {
@@ -266,14 +266,14 @@
           "tooltip": "Specify the maximum count of records that you want this operation to fetch from Google Resource Manager."
         },
         {
-          "title": "PageToken",
-          "description": "Specify a PageToken if a previous operation returned a partial result. If the previous response contains a nextPageToken element, the value of the nextPageToken element includes a PageToken parameter that specifies a starting point to use for subsequent calls.",
+          "title": "Page Token",
+          "description": "Specify a Page Token if a previous operation returned a partial result. If the previous response contains a nextPageToken element, the value of the nextPageToken element includes a Page Token parameter that specifies a starting point to use for subsequent calls.",
           "required": false,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "pageToken",
-          "tooltip": "Specify a PageToken if a previous operation returned a partial result. If the previous response contains a nextPageToken element, the value of the nextPageToken element includes a PageToken parameter that specifies a starting point to use for subsequent calls."
+          "tooltip": "Specify a Page Token if a previous operation returned a partial result. If the previous response contains a nextPageToken element, the value of the nextPageToken element includes a Page Token parameter that specifies a starting point to use for subsequent calls."
         }
       ],
       "output_schema": {
@@ -352,7 +352,7 @@
         {
           "title": "Labels",
           "name": "labels",
-          "description": "Specify the labels for the project based on which you want to create project in Google Resource Manager.",
+          "description": "Specify the labels for the project based on which you want to create project in Google Resource Manager. For example, {\"label_key\": \"label_value\", \"label_key1\": \"label_value1\"}",
           "type": "json",
           "visible": true,
           "editable": true,
@@ -366,7 +366,7 @@
         {
           "title": "Tags",
           "name": "tags",
-          "description": "Specify the tags for the project based on which you want to create project in Google Resource Manager.",
+          "description": "Specify the tags for the project based on which you want to create project in Google Resource Manager. For example, {\"tag_key\": \"tag_value\" , \"tag_key1\": \"tag_value1\"}",
           "type": "json",
           "visible": true,
           "editable": true,
@@ -384,8 +384,8 @@
           "required": true,
           "editable": true,
           "visible": true,
-          "tooltip": "Additional fields, in the JSON format, based on which you want to update documents in Google Docs.",
-          "description": "Additional fields, in the JSON format, based on which you want to update documents in Google Docs."
+          "tooltip": "Additional fields, in the JSON format, based on which you want to update documents in Google Docs. For reference, https://cloud.google.com/resource-manager/reference/rest/v3/projects#Project",
+          "description": "Additional fields, in the JSON format, based on which you want to update documents in Google Docs. For reference, https://cloud.google.com/resource-manager/reference/rest/v3/projects#Project"
         }
       ],
       "output_schema": {

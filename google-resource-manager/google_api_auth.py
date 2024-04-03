@@ -30,7 +30,7 @@ class GoogleAuth:
         self.client_id = config.get("client_id")
         self.client_secret = config.get("client_secret")
         self.verify_ssl = config.get('verify_ssl')
-        self.host = config.get("server")
+        self.host = config.get("server").strip('/')
         if self.host[:7] == "http://":
             self.host = "https://{0}".format(self.host)
         elif self.host[:8] == "https://":
