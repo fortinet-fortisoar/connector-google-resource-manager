@@ -1,0 +1,453 @@
+{
+  "name": "google-resource-manager",
+  "label": "Google Resource Manager",
+  "version": "1.0.0",
+  "description": "Google Cloud Resource Manager is a service provided by Google Cloud Platform (GCP) that helps you manage your GCP resources across projects. It provides a unified interface for organizing, viewing, and controlling access to your cloud resources.",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "category": "IT Services",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "type": "text",
+        "name": "server",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "description": "The service-based URI to which you will connect and perform the automated operations.",
+        "tooltip": "The service-based URI to which you will connect and perform the automated operations.",
+        "value": "https://cloudresourcemanager.googleapis.com"
+      },
+      {
+        "title": "Client ID",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "client_id",
+        "description": "Unique Client ID of the Google Resource Manager that is used to create an authentication token required to access the Google Resource Manager API.",
+        "tooltip": "Unique Client ID of the Google Resource Manager that is used to create an authentication token required to access the Google Resource Manager API."
+      },
+      {
+        "title": "Client Secret",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "client_secret",
+        "description": "Unique Client Secret of the Google Resource Manager that is used to create an authentication token required to access the API. For information on how to get the client secret, see https://developers.google.com/identity/protocols/oauth2/web-server.",
+        "tooltip": "Unique Client Secret of the Google Resource Manager that is used to create an authentication token required to access the API."
+      },
+      {
+        "title": "Authorization Code",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "code",
+        "tooltip": "The authorization code that you acquired during the authorization step. For more information, see the Accessing the Google Resource Manager API section.",
+        "description": "The authorization code that you acquired during the authorization step. For more information, see the Accessing the Google Resource Manager API section."
+      },
+      {
+        "title": "Redirect URL",
+        "description": "The redirect_uri of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect_uri's you registered in the app registration portal.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "redirect_url",
+        "placeholder": "E.g. https://localhost/myapp",
+        "tooltip": "The redirect_uri of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect_uri's you registered in the app registration portal."
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "search_organizations",
+      "title": "Search Organizations",
+      "description": "Searches organization resources that are visible to the user and satisfy the specified filter parameters you have specified.",
+      "category": "investigation",
+      "annotation": "search_organizations",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Query",
+          "name": "query",
+          "description": "Specify the query string used to filter the organizations to return in the response. Query rules are case-insensitive.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the query string used to filter the organizations to return in the response. Query rules are case-insensitive.",
+          "placeholder": "e.g directorycustomerid:123456789 , domain:google.com etc"
+        },
+        {
+          "title": "Page Size",
+          "description": "Specify the maximum count of records that you want this operation to fetch from Google Resource Manager.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "pageSize",
+          "tooltip": "Specify the maximum count of records that you want this operation to fetch from Google Resource Manager."
+        },
+        {
+          "title": "Page Token",
+          "description": "Specify a Page Token if a previous operation returned a partial result. If the previous response contains a nextPageToken element, the value of the nextPageToken element includes a Page Token parameter that specifies a starting point to use for subsequent calls.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageToken",
+          "tooltip": "Specify a Page Token if a previous operation returned a partial result. If the previous response contains a nextPageToken element, the value of the nextPageToken element includes a Page Token parameter that specifies a starting point to use for subsequent calls."
+        }
+      ],
+      "output_schema": {
+        "organizations": [
+          {
+            "name": "",
+            "displayName": "",
+            "state": "",
+            "createTime": "",
+            "updateTime": "",
+            "deleteTime": "",
+            "etag": "",
+            "directoryCustomerId": ""
+          }
+        ],
+        "nextPageToken": ""
+      }
+    },
+    {
+      "operation": "get_organization_details",
+      "title": "Get organization Details",
+      "description": "Retrieves an organization details based on the project name you have specified.",
+      "category": "investigation",
+      "annotation": "get_organization_details",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Organization Name",
+          "name": "organization_name",
+          "description": "Specify the name of the organization based on which you want to retrieve organization details from Google Resource Manager.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the name of the organization based on which you want to retrieve organization details from Google Resource Manager.",
+          "placeholder": "e.g organizations/1234"
+        }
+      ],
+      "output_schema": {
+        "name": "",
+        "displayName": "",
+        "state": "",
+        "createTime": "",
+        "updateTime": "",
+        "deleteTime": "",
+        "etag": "",
+        "directoryCustomerId": ""
+      }
+    },
+    {
+      "operation": "create_project",
+      "title": "Create Project",
+      "description": "Creates a project in Google Resource Manager based on the project ID and other input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "create_project",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Project ID",
+          "name": "projectId",
+          "description": "Specify the ID of the project based on which you want to create project in Google Resource Manager.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the project based on which you want to create project in Google Resource Manager."
+        },
+        {
+          "title": "Display Name",
+          "name": "displayName",
+          "description": "Specify the name of the project based on which you want to create project in Google Resource Manager.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "A user-assigned display name of the project. When present it must be between 4 to 30 characters. Allowed characters are: lowercase and uppercase letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point."
+        },
+        {
+          "title": "Labels",
+          "name": "labels",
+          "description": "Specify the labels for the project based on which you want to create project in Google Resource Manager. For example, {\"label_key\": \"label_value\", \"label_key1\": \"label_value1\"}",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the label for the project based on which you want to create project in Google Resource Manager.",
+          "value": {
+            "label_key": "label_value",
+            "label_key1": "label_value1"
+          }
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "description": "Specify the tags for the project based on which you want to create project in Google Resource Manager. For example, {\"tag_key\": \"tag_value\" , \"tag_key1\": \"tag_value1\"}",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the tags for the project based on which you want to create project in Google Resource Manager.",
+          "value": {
+            "tag_key": "tag_value",
+            "tag_key1": "tag_value1"
+          }
+        },
+        {
+          "title": "Additional Fields",
+          "name": "additional_parameters",
+          "type": "json",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Additional fields, in the JSON format, based on which you want to create project in Google Resource Manager. For reference, https://cloud.google.com/resource-manager/reference/rest/v3/projects#Project",
+          "description": "Additional fields, in the JSON format, based on which you want to create project in Google Resource Manager. For reference, https://cloud.google.com/resource-manager/reference/rest/v3/projects#Project"
+        }
+      ],
+      "output_schema": {
+        "name": ""
+      }
+    },
+    {
+      "operation": "search_projects",
+      "title": "Search Projects",
+      "description": "Searches for a projects based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "search_projects",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Query",
+          "name": "query",
+          "description": "Specify the query string for searching for projects, If multiple fields are included in the query, then it will return results that match any of the fields. For Reference: https://cloud.google.com/resource-manager/reference/rest/v3/projects/search#query-parameters",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the query string for searching for projects, If multiple fields are included in the query, then it will return results that match any of the fields.",
+          "placeholder": "e.g displayName, name etc"
+        },
+        {
+          "title": "Page Size",
+          "description": "Specify the maximum count of records that you want this operation to fetch from Google Resource Manager.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "pageSize",
+          "tooltip": "Specify the maximum count of records that you want this operation to fetch from Google Resource Manager."
+        },
+        {
+          "title": "Page Token",
+          "description": "Specify a Page Token if a previous operation returned a partial result. If the previous response contains a nextPageToken element, the value of the nextPageToken element includes a Page Token parameter that specifies a starting point to use for subsequent calls.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "pageToken",
+          "tooltip": "Specify a Page Token if a previous operation returned a partial result. If the previous response contains a nextPageToken element, the value of the nextPageToken element includes a Page Token parameter that specifies a starting point to use for subsequent calls."
+        }
+      ],
+      "output_schema": {
+        "projects": [
+          {
+            "name": "",
+            "projectId": "",
+            "state": "",
+            "displayName": "",
+            "createTime": "",
+            "etag": ""
+          }
+        ],
+        "nextPageToken": ""
+      }
+    },
+    {
+      "operation": "get_project_details",
+      "title": "Get Project Details",
+      "description": "Retrieves an project details based on the project name you have specified.",
+      "category": "investigation",
+      "annotation": "get_project_details",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Project Name",
+          "name": "project_name",
+          "description": "Specify the name of the project based on which you want to retrieve project details from Google Resource Manager.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the name of the project based on which you want to retrieve project details from Google Resource Manager.",
+          "placeholder": "e.g projects/415104041262"
+        }
+      ],
+      "output_schema": {
+        "name": "",
+        "projectId": "",
+        "state": "",
+        "displayName": "",
+        "createTime": "",
+        "updateTime": "",
+        "etag": ""
+      }
+    },
+    {
+      "operation": "update_project",
+      "title": "Update Project",
+      "description": "Updates an specific project details in Google Resource Manager based on the project name and other input parameters that you have specified.",
+      "category": "investigation",
+      "annotation": "update_project",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Project Name",
+          "name": "project_name",
+          "description": "Specify the name of the project based on which you want to update project details in Google Docs.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the name of the project based on which you want to update project details in Google Docs.",
+          "placeholder": "e.g projects/415104041262"
+        },
+        {
+          "title": "Display Name",
+          "name": "displayName",
+          "description": "Specify the name of the project based on which you want to update project in Google Resource Manager.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "A user-assigned display name of the project. When present it must be between 4 to 30 characters. Allowed characters are: lowercase and uppercase letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point."
+        },
+        {
+          "title": "Labels",
+          "name": "labels",
+          "description": "Specify the labels for the project based on which you want to create project in Google Resource Manager. For example, {\"label_key\": \"label_value\", \"label_key1\": \"label_value1\"}",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the label for the project based on which you want to create project in Google Resource Manager.",
+          "value": {
+            "label_key": "label_value",
+            "label_key1": "label_value1"
+          }
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "description": "Specify the tags for the project based on which you want to create project in Google Resource Manager. For example, {\"tag_key\": \"tag_value\" , \"tag_key1\": \"tag_value1\"}",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the tags for the project based on which you want to create project in Google Resource Manager.",
+          "value": {
+            "tag_key": "tag_value",
+            "tag_key1": "tag_value1"
+          }
+        },
+        {
+          "title": "Additional Fields",
+          "name": "additional_parameters",
+          "type": "json",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Additional fields, in the JSON format, based on which you want to update documents in Google Docs. For reference, https://cloud.google.com/resource-manager/reference/rest/v3/projects#Project",
+          "description": "Additional fields, in the JSON format, based on which you want to update documents in Google Docs. For reference, https://cloud.google.com/resource-manager/reference/rest/v3/projects#Project"
+        }
+      ],
+      "output_schema": {
+        "done": "",
+        "response": {
+          "@type": "",
+          "name": "",
+          "projectId": "",
+          "state": "",
+          "displayName": "",
+          "createTime": "",
+          "etag": ""
+        }
+      }
+    },
+    {
+      "operation": "delete_project",
+      "title": "Delete Project",
+      "description": "Deletes an specific project details based on the project name you have specified.",
+      "category": "investigation",
+      "annotation": "delete_project",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Project Name",
+          "name": "project_name",
+          "description": "Specify the name of the project based on which you want to delete project details from Google Resource Manager.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the name of the project based on which you want to delete project details from Google Resource Manager.",
+          "placeholder": "e.g projects/415104041262"
+        }
+      ],
+      "output_schema": {
+        "name": ""
+      }
+    },
+    {
+      "operation": "restore_project",
+      "title": "Restore Project",
+      "description": "Restore a specific project details based on the project name you have specified.",
+      "category": "investigation",
+      "annotation": "restore_project",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Project Name",
+          "name": "project_name",
+          "description": "Specify the name of the project based on which you want to restore project details from Google Resource Manager.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the name of the project based on which you want to restore project details from Google Resource Manager.",
+          "placeholder": "e.g projects/415104041262"
+        }
+      ],
+      "output_schema": {
+        "name": ""
+      }
+    }
+  ]
+}
