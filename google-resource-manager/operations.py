@@ -177,7 +177,7 @@ def restore_project(config, params, connector_info):
 
 def _check_health(config, connector_info):
     try:
-        return check(config, connector_info)
+        return check(config, connector_info) and search_projects(config, params, connector_info)
     except Exception as err:
         logger.exception("{0}".format(str(err)))
         raise ConnectorError("{0}".format(str(err)))

@@ -181,7 +181,8 @@
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Specify the ID of the project based on which you want to create project in Google Resource Manager."
+          "tooltip": "Specify the unique user-assigned ID of the project. It must be 6 to 30 lowercase ASCII letters, digits, or hyphens. It must start with a letter. Trailing hyphens are prohibited. For example: tokyo-rain-123",
+          "placeholder": "Example: tokyo-rain-123"
         },
         {
           "title": "Display Name",
@@ -225,11 +226,14 @@
           "title": "Additional Fields",
           "name": "additional_parameters",
           "type": "json",
-          "required": true,
+          "required": false,
           "editable": true,
           "visible": true,
           "tooltip": "Additional fields, in the JSON format, based on which you want to create project in Google Resource Manager. For reference, https://cloud.google.com/resource-manager/reference/rest/v3/projects#Project",
-          "description": "Additional fields, in the JSON format, based on which you want to create project in Google Resource Manager. For reference, https://cloud.google.com/resource-manager/reference/rest/v3/projects#Project"
+          "description": "Additional fields, in the JSON format, based on which you want to create project in Google Resource Manager. For reference, https://cloud.google.com/resource-manager/reference/rest/v3/projects#Project",
+          "value": {
+            "parent": ""
+          }
         }
       ],
       "output_schema": {
@@ -253,7 +257,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Specify the query string for searching for projects, If multiple fields are included in the query, then it will return results that match any of the fields.",
-          "placeholder": "e.g displayName, name etc"
+          "placeholder": "e.g displayName:\"<displayname>\", name:\"<name>\" etc"
         },
         {
           "title": "Page Size",
@@ -381,11 +385,14 @@
           "title": "Additional Fields",
           "name": "additional_parameters",
           "type": "json",
-          "required": true,
+          "required": false,
           "editable": true,
           "visible": true,
           "tooltip": "Additional fields, in the JSON format, based on which you want to update documents in Google Docs. For reference, https://cloud.google.com/resource-manager/reference/rest/v3/projects#Project",
-          "description": "Additional fields, in the JSON format, based on which you want to update documents in Google Docs. For reference, https://cloud.google.com/resource-manager/reference/rest/v3/projects#Project"
+          "description": "Additional fields, in the JSON format, based on which you want to update documents in Google Docs. For reference, https://cloud.google.com/resource-manager/reference/rest/v3/projects#Project",
+          "value": {
+            "parent": ""
+          }
         }
       ],
       "output_schema": {
