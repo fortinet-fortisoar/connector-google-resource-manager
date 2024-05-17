@@ -34,7 +34,7 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Google Resource Manager",
+                "name": "Google Cloud Resource Manager",
                 "config": "",
                 "params": {
                   "query": "",
@@ -52,9 +52,9 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Searches organization resources that are visible to the user and satisfy the specified filter parameters you have specified.",
+          "description": "Searches an organization's resources that are visible to the user based on the filter criteria and other input parameters that you have specified.",
           "name": "Search Organizations",
-          "tag": "#Google Resource Manager",
+          "tag": "#Google Cloud Resource Manager",
           "recordTags": [
             "Google",
             "google-resource-manager"
@@ -106,7 +106,7 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Google Resource Manager",
+                "name": "Google Cloud Resource Manager",
                 "config": "",
                 "params": {
                   "organization_name": ""
@@ -122,9 +122,9 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Retrieves an organization details based on the project name you have specified.",
+          "description": "Retrieves an organization's details based on the project name that you have specified.",
           "name": "Get organization Details",
-          "tag": "#Google Resource Manager",
+          "tag": "#Google Cloud Resource Manager",
           "recordTags": [
             "Google",
             "google-resource-manager"
@@ -176,7 +176,7 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Google Resource Manager",
+                "name": "Google Cloud Resource Manager",
                 "config": "",
                 "params": {
                   "projectId": "",
@@ -201,9 +201,9 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Creates a project in Google Resource Manager based on the project ID and other input parameters you have specified.",
+          "description": "Creates a project in Google Cloud Resource Manager based on the project ID and other input parameters you have specified.",
           "name": "Create Project",
-          "tag": "#Google Resource Manager",
+          "tag": "#Google Cloud Resource Manager",
           "recordTags": [
             "Google",
             "google-resource-manager"
@@ -255,7 +255,7 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Google Resource Manager",
+                "name": "Google Cloud Resource Manager",
                 "config": "",
                 "params": {
                   "query": "",
@@ -273,9 +273,9 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Searches for a projects based on the input parameters you have specified.",
+          "description": "Searches for projects based on the filter criteria and other input parameters that you have specified.",
           "name": "Search Projects",
-          "tag": "#Google Resource Manager",
+          "tag": "#Google Cloud Resource Manager",
           "recordTags": [
             "Google",
             "google-resource-manager"
@@ -327,7 +327,7 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Google Resource Manager",
+                "name": "Google Cloud Resource Manager",
                 "config": "",
                 "params": {
                   "project_name": ""
@@ -343,9 +343,9 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Retrieves an project details based on the project name you have specified.",
+          "description": "Retrieves a project's details based on the project name that you have specified.",
           "name": "Get Project Details",
-          "tag": "#Google Resource Manager",
+          "tag": "#Google Cloud Resource Manager",
           "recordTags": [
             "Google",
             "google-resource-manager"
@@ -423,9 +423,9 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Updates an specific project details in Google Resource Manager based on the project name and other input parameters that you have specified.",
+          "description": "Updates a specific project's details in Google Cloud Resource Manager based on the project name and other input parameters that you have specified.",
           "name": "Update Project",
-          "tag": "#Google Resource Manager",
+          "tag": "#Google Cloud Resource Manager",
           "recordTags": [
             "Google",
             "google-resource-manager"
@@ -477,7 +477,7 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Google Resource Manager",
+                "name": "Google Cloud Resource Manager",
                 "config": "",
                 "params": {
                   "project_name": ""
@@ -493,9 +493,9 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Deletes an specific project details based on the project name you have specified.",
+          "description": "Deletes a project based on the project name you have specified.",
           "name": "Delete Project",
-          "tag": "#Google Resource Manager",
+          "tag": "#Google Cloud Resource Manager",
           "recordTags": [
             "Google",
             "google-resource-manager"
@@ -547,7 +547,7 @@
               "description": null,
               "status": null,
               "arguments": {
-                "name": "Google Resource Manager",
+                "name": "Google Cloud Resource Manager",
                 "config": "",
                 "params": {
                   "project_name": ""
@@ -563,9 +563,9 @@
             }
           ],
           "triggerLimit": null,
-          "description": "Restore a specific project details based on the project name you have specified.",
+          "description": "Restores a deleted project based on the project name that you have specified.",
           "name": "Restore Project",
-          "tag": "#Google Resource Manager",
+          "tag": "#Google Cloud Resource Manager",
           "recordTags": [
             "Google",
             "google-resource-manager"
@@ -589,12 +589,12 @@
           ]
         }
       ],
-      "name": "Sample - Google Resource Manager - 1.0.0",
+      "name": "Sample - Google Cloud Resource Manager - 1.0.0",
       "description": "Google Cloud Resource Manager is a service provided by Google Cloud Platform (GCP) that helps you manage your GCP resources across projects. It provides a unified interface for organizing, viewing, and controlling access to your cloud resources.",
       "visible": true,
       "recordTags": [
         "Google",
-        "google-resource-manager"
+        "google-cloud-resource-manager"
       ]
     }
   ]

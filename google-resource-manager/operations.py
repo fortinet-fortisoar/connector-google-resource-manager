@@ -102,6 +102,7 @@ def create_project(config, params, connector_info):
     try:
         url = '{0}/projects'.format(RESOURCE_MANAGER_API_VERSION)
         payload = {
+            "projectId": params.get('projectId'),
             "displayName": params.get('displayName'),
             "labels": params.get('labels'),
             "tags": params.get('tags')
@@ -139,7 +140,7 @@ def get_project_details(config, params, connector_info):
 
 def update_project(config, params, connector_info):
     try:
-        url = '{0}/{1}'.format(RESOURCE_MANAGER_API_VERSION, params.get('document_id'))
+        url = '{0}/{1}'.format(RESOURCE_MANAGER_API_VERSION, params.get('project_name'))
         payload = {
             "displayName": params.get('displayName'),
             "labels": params.get('labels'),
@@ -177,6 +178,7 @@ def restore_project(config, params, connector_info):
 
 def _check_health(config, connector_info):
     try:
+        params = {}
         return check(config, connector_info) and search_projects(config, params, connector_info)
     except Exception as err:
         logger.exception("{0}".format(str(err)))
